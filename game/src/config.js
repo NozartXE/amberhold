@@ -5,11 +5,11 @@ export const HIVE_CELL = { c: 7, r: 4 };
 export const GATES = { EAST: { c: 14, r: 3 }, NORTH: { c: 7, r: 0 }, WEST: { c: 0, r: 3 } };
 export const ROCKS = [{ c: 4, r: 2 }, { c: 10, r: 5 }, { c: 5, r: 6 }];
 export const TOWERS = [
-  { id: 'poppy', name: 'POPPY TURRET', key: '1', cost: 30, range: 2.2, dmg: 6, rate: 3, unlockFlow: 1, line: 'Fast pollen puffs; steady single-target damage.', glyph: '✿', color: '#d85b73' },
-  { id: 'sprinkler', name: 'CLOVER SPRINKLER', key: '2', cost: 40, range: 2, dmg: 1, rate: 2, unlockFlow: 1, line: 'Dew ticks slow pests 45% for 1.2 seconds.', glyph: '☘', color: '#65a94b', slow: 0.45, slowTime: 1.2 },
-  { id: 'cannon', name: 'HIVE CANNON', key: '3', cost: 60, range: 3, dmg: 16, rate: 0.8, unlockFlow: 1, line: 'Homing bees deliver a heavy hit.', glyph: '●', color: '#d59a28' },
+  { id: 'poppy', name: 'POPPY TURRET', key: '1', cost: 30, range: 2.2, dmg: 10, rate: 3.5, unlockFlow: 1, line: 'Fast pollen puffs; steady single-target damage.', glyph: '✿', color: '#d85b73' },
+  { id: 'sprinkler', name: 'CLOVER SPRINKLER', key: '2', cost: 40, range: 2, dmg: 2, rate: 2, unlockFlow: 1, line: 'Dew ticks slow pests 45% for 1.2 seconds.', glyph: '☘', color: '#65a94b', slow: 0.45, slowTime: 1.2 },
+  { id: 'cannon', name: 'HIVE CANNON', key: '3', cost: 60, range: 3, dmg: 24, rate: 1, unlockFlow: 1, line: 'Homing bees deliver a heavy hit.', glyph: '●', color: '#d59a28' },
   { id: 'wall', name: 'WAX WALL', key: '4', cost: 25, range: 0, dmg: 0, rate: 0, unlockFlow: 1, line: 'Golden block with 220 HP; pests chew for 10 DPS.', glyph: '▰', color: '#e6b84c', hp: 220 },
-  { id: 'bell', name: "QUEEN'S BELL", key: '5', cost: 80, range: 2.8, dmg: 10, rate: 0.2, period: 5, stun: 1.1, unlockFlow: 4, line: 'Rings every 5 seconds, damaging and stunning nearby pests.', glyph: '♢', color: '#f0d36d' },
+  { id: 'bell', name: "QUEEN'S BELL", key: '5', cost: 80, range: 2.8, dmg: 18, rate: 0.25, period: 4, stun: 1.1, unlockFlow: 4, line: 'Rings every 5 seconds, damaging and stunning nearby pests.', glyph: '♢', color: '#f0d36d' },
 ];
 export const PESTS = {
   ant: { name: 'ANT', hp: 18, speed: 1.15, reward: 2, score: 10, leak: 1, line: 'A steady ground crawler.' },
