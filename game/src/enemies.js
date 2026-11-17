@@ -39,7 +39,11 @@ export function stepPests(sim, dt) {
           break;
         }
         const next = nextStep(field, sim.grid, c, r);
-        if (!next) break;
+        if (!next) {
+          const dx = hx - p.x; const dy = hy - p.y; const d = Math.hypot(dx, dy);
+          if (d) { p.x += dx / d * speed * dt; p.y += dy / d * speed * dt; }
+          break;
+        }
         p.chewTarget = null;
         const tx = next.c + 0.5; const ty = next.r + 0.5;
         const dx = tx - p.x; const dy = ty - p.y; const d = Math.hypot(dx, dy);

@@ -1,5 +1,5 @@
 // The keeper's rehearsal plan: a fixed build order and draft picks that the staging bot follows, so a whole campaign can be replayed tick-perfect in Node and in the browser.
-export const PLAN_COVER = { flow: 6, tickInFlow: 123 };
+export const PLAN_COVER = { flow: 6, tickInFlow: 700 };
 export const PLAN = [
   [
     { buy: 'poppy', c: 6, r: 1 }, { buy: 'poppy', c: 8, r: 1 },
