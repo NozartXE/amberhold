@@ -1,0 +1,3 @@
+// The live meadow behind the title screen: a real sim run on a fixed seed with a rehearsed layout, looping quietly so the title already shows the game.
+import { createSim } from './sim.js';
+export function createDemo(){let sim;function fresh(){sim=createSim({seed:3,difficulty:'gentle',save:{best:{},history:[],feats:{},wins:0}});sim.finish=won=>{sim.screen=won?'won':'lost'};[['poppy',3,3],['sprinkler',5,5],['cannon',9,3],['wall',6,3],['poppy',10,4]].forEach(([id,c,r])=>sim.buy(id,c,r));sim.startFlow()}fresh();let wait=0;return{get sim(){return sim},step(dt){sim.step(dt);if(sim.screen==='draft'){wait+=dt;if(wait>.8){sim.pickBoon(0);wait=0}}if(sim.screen==='build')sim.startFlow();if(sim.screen==='won'||sim.screen==='lost')fresh()}}}

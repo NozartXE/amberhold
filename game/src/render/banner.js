@@ -1,0 +1,4 @@
+// Where the event banner sits: a pill no wider than 46% of the stage, docked centre-top, that never covers the build bar.
+import { fitFont } from './fit.js';
+import { STAGE } from './layout.js';
+export function drawBanner(ctx,sim){const b=sim.announce?.banner;if(!b)return;const age=sim.time-(b.at??sim.time),life=(b.until??(sim.time+3.2))-(b.at??sim.time);if(age>=life)return;const a=Math.min(1,age/.2,(life-age)/.35),w=560,h=48,x=(STAGE.w-w)/2,y=10;ctx.save();ctx.globalAlpha=Math.max(0,a);ctx.beginPath();ctx.roundRect(x,y,w,h,18);ctx.fillStyle='#fff4d7';ctx.fill();ctx.lineWidth=3;ctx.strokeStyle='#c4861e';ctx.stroke();ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillStyle='#543517';fitFont(ctx,b.text??b.line??'',20,w-30,'sans-serif');ctx.fillText(b.text??b.line??'',STAGE.w/2,y+18,w-30);ctx.font='12px sans-serif';ctx.fillStyle='#82623a';ctx.fillText(b.sub??'',STAGE.w/2,y+36,w-30);ctx.restore()}

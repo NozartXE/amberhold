@@ -1,0 +1,3 @@
+// One rule for type that has to fit a box, on every screen: shrink the font until it fits, never below 60%, and say so by returning the size used.
+export function fitFont(ctx,text,basePx,maxWidth,family='sans-serif'){let px=basePx;ctx.font=`${px}px ${family}`;while(px>basePx*.6&&ctx.measureText(String(text)).width>maxWidth)px=Math.max(basePx*.6,px-1);ctx.font=`${px}px ${family}`;return px}
+export function wrapText(ctx,text,maxWidth){const out=[];for(const para of String(text).split('\n')){let line='';for(const word of para.split(/\s+/)){const next=line?`${line} ${word}`:word;if(line&&ctx.measureText(next).width>maxWidth){out.push(line);line=word}else line=next}out.push(line)}return out}
