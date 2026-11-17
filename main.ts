@@ -9,10 +9,10 @@ const output = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 mkdirSync(output, { recursive: true });
 cpSync(resolve(root, 'game'), resolve(output, 'game'), { recursive: true });
 cpSync(resolve(root, 'screenshots'), resolve(output, 'screenshots'), { recursive: true });
-writeFileSync(resolve(output, 'dossier.json'), JSON.stringify(buildDossier(output, {
+writeFileSync(resolve(output, 'dossier.json'), buildDossier(output, {
   text_max_bytes: 163840,
   screenshots: { max: 4, max_bytes: 262144 },
   game_max_files: 993,
   game_max_bytes: 50331648,
   game_path_max_bytes: 1000,
-}), null, 2));
+}));
